@@ -19,3 +19,21 @@ class Solution:
 This solution utilizes 2 for loops to iterate over a singe array in order to find the target pair.
 Time complexity: O(n x n) = O (n^2)
 Space complexity: O(1)
+
+(2) ------ HASH TABLE APPROACH------
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        num_dict = {}
+        l = len(nums)
+
+        for i, num in enumerate(nums):
+            req = target - num
+            if req in num_dict:
+                return [num_dict[req], i]
+            num_dict[num] = i
+        return []
+
+Time complexity: O(n) --> as we are enumerating once
+Space complexity: O(1)
+
