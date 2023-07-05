@@ -1,0 +1,22 @@
+#Python
+
+#Problem Statement
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+#----Use the concept of sets: cannot contain duplicate elements------#
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+
+        hset = set()
+        for idx in nums:
+            if idx in hset:
+                return True
+            else:
+                hset.add(idx)
+
+Time Complexity: O(n)
+Space Complexity: O(n)
